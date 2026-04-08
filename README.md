@@ -40,16 +40,16 @@ https://github.com/vvkvoda/101504750_labtest2_3133.git
 ## 📸 Screenshots
 
 ### Running Application
-![Running App](screenshots/running-app.png)
+![Running App](screenshots/running-app.png.jpeg)
 
 ### Character List
-![Character List](screenshots/character-list.png)
+![Character List](screenshots/character-list.png.jpeg)
 
 ### Filter by House
-![Filter](screenshots/filter-house.png)
+![Filter](screenshots/filter-house.png.jpeg)
 
 ### Character Details
-![Details](screenshots/character-details.png)
+![Details](screenshots/character-details.png.jpeg)
 
 ---
 
