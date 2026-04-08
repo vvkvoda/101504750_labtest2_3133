@@ -1,0 +1,16 @@
+<mat-toolbar class="toolbar">
+  <div class="toolbar-inner">
+    <div>
+      <h1>{{ title }}</h1>
+      <p>COMP3133 Lab Test 2</p>
+    </div>
+
+    <nav class="nav-links">
+      <a mat-button routerLink="/characters" routerLinkActive="active-link">Characters</a>
+    </nav>
+  </div>
+</mat-toolbar>
+
+<main class="main-layout">
+  <router-outlet></router-outlet>
+</main>

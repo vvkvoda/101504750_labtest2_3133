@@ -1,0 +1,57 @@
+<section class="details-page">
+  <a mat-button color="primary" routerLink="/characters">← Back to Characters</a>
+
+  @if (loading()) {
+    <div class="state-box">
+      <mat-spinner diameter="48"></mat-spinner>
+      <p>Loading character details...</p>
+    </div>
+  } @else if (errorMessage()) {
+    <div class="state-box error">
+      <p>{{ errorMessage() }}</p>
+    </div>
+  } @else if (character(); as selectedCharacter) {
+    <mat-card class="details-card">
+      <div class="details-layout">
+        @if (selectedCharacter.image) {
+          <img
+            class="details-image"
+            [src]="selectedCharacter.image"
+            [alt]="selectedCharacter.name"
+          />
+        } @else {
+          <div class="no-image">No Image</div>
+        }
+
+        <div class="details-content">
+          <h2>{{ selectedCharacter.name }}</h2>
+
+          <p><strong>House:</strong> {{ selectedCharacter.house || 'No House' }}</p>
+          <p><strong>Actor:</strong> {{ selectedCharacter.actor || 'Unknown' }}</p>
+
+          <p>
+            <strong>Status:</strong>
+            @if (selectedCharacter.wizard === true) {
+              Wizard
+            } @else if (selectedCharacter.wizard === false) {
+              Muggle / Unknown
+            } @else {
+              Unknown
+            }
+          </p>
+
+          <p><strong>Species:</strong> {{ selectedCharacter.species || 'Unknown' }}</p>
+          <p><strong>Ancestry:</strong> {{ selectedCharacter.ancestry || 'Unknown' }}</p>
+
+          @if (selectedCharacter.wand.wood || selectedCharacter.wand.core || selectedCharacter.wand.length) {
+            <p><strong>Wand Wood:</strong> {{ selectedCharacter.wand.wood || 'Unknown' }}</p>
+            <p><strong>Wand Core:</strong> {{ selectedCharacter.wand.core || 'Unknown' }}</p>
+            <p><strong>Wand Length:</strong> {{ selectedCharacter.wand.length ?? 'Unknown' }}</p>
+          } @else {
+            <p><strong>Wand:</strong> No wand information available</p>
+          }
+        </div>
+      </div>
+    </mat-card>
+  }
+</section>

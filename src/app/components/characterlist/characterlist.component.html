@@ -1,0 +1,57 @@
+<section class="page">
+  <app-characterfilter (houseChanged)="onHouseChanged($event)"></app-characterfilter>
+
+  @if (loading()) {
+    <div class="state-box">
+      <mat-spinner diameter="48"></mat-spinner>
+      <p>Loading characters...</p>
+    </div>
+  } @else if (errorMessage()) {
+    <div class="state-box error">
+      <p>{{ errorMessage() }}</p>
+      <button mat-raised-button color="primary" (click)="loadCharacters()">Try Again</button>
+    </div>
+  } @else {
+    <section class="result-header">
+      <h2>
+        @switch (selectedHouse()) {
+          @case ('All') { All Characters }
+          @case ('No House') { Characters With No House }
+          @default { <span>{{ selectedHouse() }} Characters</span> }
+        }
+      </h2>
+      <p>Total: {{ filteredCharacters().length }}</p>
+    </section>
+
+    <section class="card-grid">
+      @for (character of filteredCharacters(); track trackById($index, character)) {
+        <mat-card class="character-card">
+          @if (character.image) {
+            <img
+              mat-card-image
+              [src]="character.image"
+              [alt]="character.name"
+            />
+          } @else {
+            <div class="no-image">No Image</div>
+          }
+
+          <mat-card-content>
+            <h3>{{ character.name }}</h3>
+            <p><strong>House:</strong> {{ character.house || 'No House' }}</p>
+          </mat-card-content>
+
+          <mat-card-actions>
+            <a mat-raised-button color="primary" [routerLink]="['/characters', character.id]">
+              View Details
+            </a>
+          </mat-card-actions>
+        </mat-card>
+      } @empty {
+        <div class="state-box">
+          <p>No characters found for this filter.</p>
+        </div>
+      }
+    </section>
+  }
+</section>
