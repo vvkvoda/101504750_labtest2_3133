@@ -1,31 +1,60 @@
-# 101504750-lab-test2-comp3133
+# 101504750_labtest2_3133
 
-Harry Potter Theme Angular HTTP Client application for COMP3133 Lab Test 2.
+## COMP3133 Lab Test 2 – Harry Potter Character Explorer
 
-## Features
-- Fetches all Harry Potter characters from the HP API
-- Displays characters in a responsive Angular Material card grid
-- Filters characters by Hogwarts house with a dropdown
-- Shows full character details on a separate page
-- Uses Angular HttpClient, FormsModule, ReactiveFormsModule, Signals, `@for`, `@if`, and `@switch`
+This Angular application fetches and displays Harry Potter character data using a public API.
 
-## API Endpoints
-- All characters: `https://hp-api.onrender.com/api/characters`
-- Characters by house: `https://hp-api.onrender.com/api/characters/house/:house`
-- Character details: `https://hp-api.onrender.com/api/character/:id`
+---
 
-## Run locally
+## 🌐 Live Application
+https://101504750-labtest2-3133.vercel.app
+
+---
+
+## 📦 GitHub Repository
+https://github.com/vvkvoda/101504750_labtest2_3133.git
+
+---
+
+## 🚀 Features
+
+- Display all Harry Potter characters
+- Filter characters by house (Gryffindor, Slytherin, etc.)
+- View detailed character information
+- Handle missing images with placeholder
+- Handle missing wand data with proper fallback
+- Responsive UI using Angular Material
+
+---
+
+## 🛠️ Technologies Used
+
+- Angular (latest)
+- Angular HttpClient
+- Angular Material
+- TypeScript
+- Signals and Angular control flow (`@for`, `@if`, `@switch`)
+
+---
+
+## 📸 Screenshots
+
+### Running Application
+![Running App](screenshots/running-app.png)
+
+### Character List
+![Character List](screenshots/character-list.png)
+
+### Filter by House
+![Filter](screenshots/filter-house.png)
+
+### Character Details
+![Details](screenshots/character-details.png)
+
+---
+
+## ⚙️ How to Run Locally
+
 ```bash
 npm install
 ng serve
-```
-Then open `http://localhost:4200`
-
-## Suggested screenshots for submission
-1. Character list page running in browser
-2. House filter page with dropdown results
-3. Character details page
-4. Code screenshots for service, model, and components
-
-## Deployment
-You can deploy this Angular app to Vercel or Render after pushing it to GitHub.
